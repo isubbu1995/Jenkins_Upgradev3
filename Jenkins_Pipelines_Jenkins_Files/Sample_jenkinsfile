@@ -3,15 +3,15 @@ pipeline {
 
     environment {
         // Define environment variables here
-        MY_ENV_VAR = 'Custom Value'
+        MY_ENV_VAR = 'My Custom Value'
     }
 
     stages {
-        stage('Checkout') {
+        stage('Checkout1') {
             steps {
                 script {
                     // Clone the Git repository's master branch
-                    def gitRepoUrl = 'https://github.com/anshulc55/Jenkins_Upgradev3.git'
+                    def gitRepoUrl = 'https://github.com/isubbu1995/Jenkins_Upgradev3.git'
 
                     checkout([$class: 'GitSCM', 
                         branches: [[name: '*/master']], 
@@ -22,7 +22,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build2') {
             steps {
                 // Build your application here (e.g., compile, package, etc.)
                 sh '''
@@ -32,14 +32,14 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Test3') {
             steps {
                 // Run your tests (e.g., unit tests, integration tests)
                 sh 'echo "In Test Step"'
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy4') {
             steps {
                 // Deploy your application to a target environment (e.g., staging, production)
                 sh 'echo "Value of ENV Varaible is "$MY_ENV_VAR""'

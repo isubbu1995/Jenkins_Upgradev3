@@ -3,7 +3,7 @@ MAINTAINER GFG author
 LABEL env=production
 ENV apparea /data/app
 RUN mkdir -p $apparea
-ADD target/single-module-project.jar $apparea
+ADD maven-samples/single-module/target/single-module-project.jar $apparea
 WORKDIR $apparea
 EXPOSE 8080
 CMD ["java","-jar","single-module-project.jar"]
